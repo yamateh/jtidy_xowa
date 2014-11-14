@@ -2512,7 +2512,9 @@ public class Lexer
                             this.columns = this.in.getCurcol() - 3;
                         }
 
-                        badcomment++;
+                       if(c!='"'){
+                            badcomment++;
+                       }
                         if (this.configuration.fixComments)
                         {
                             this.lexbuf[this.lexsize - 2] = (byte) '=';
